@@ -39,7 +39,7 @@
                         @forelse ($carts as $cart)
                             <tbody>
                                 <tr>
-                                    <td>Jersey {{ $cart['name'] }}</td>
+                                    <td> {{ $cart['name'] }}</td>
                                     <td>{{ $cart['qty'] }}</td>
                                     <td>Rp. {{ number_format($cart['price'],2,',','.') }}</td>
                                 </tr>
@@ -55,20 +55,22 @@
         <div class="p-3">
             <div class="row">
                 <div class="col-6">
-                    <form wire:submit.prevent="handleSubmit">
+                    
                         <div class="mt-4 mb-2">
                             <button wire:click = "hideModal()" type="button" class="btn btn-danger btn-block">
                                 Batal<i class="ml-2 fas fa-times"></i>
                             </button>
                         </div>
-                    </form>
+                    
                 </div>
                 <div class="col-6">
+                <form wire:submit.prevent="handleSubmit">
                     <div class="mt-4 mb-2">
                         <button wire:ignore type="submit" id="saveButton" class="btn btn-success btn-block">
                             Konfirmasi<i class="ml-2 fas fa-check"></i>
                         </button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
